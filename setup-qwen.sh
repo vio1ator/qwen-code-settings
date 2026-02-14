@@ -75,6 +75,21 @@ echo "OPENAI_API_KEY=$API_KEY" > "$QWEN_DIR/.env"
 echo "✓ .env file created"
 echo ""
 
+# Add PATH export to bashrc if not already present
+if ! grep -q "qwen-code" ~/.bashrc 2>/dev/null; then
+    echo "" >> ~/.bashrc
+    echo '# Qwen Code CLI' >> ~/.bashrc
+    echo 'export PATH="$HOME/.qwen/bin:$PATH"' >> ~/.bashrc
+    echo 'source ~/.qwen/.env' >> ~/.bashrc
+    echo '✓ Added PATH to ~/.bashrc'
+fi
+
+# Source bashrc to apply changes in current session
+echo "Sourcing ~/.bashrc..."
+source ~/.bashrc
+echo "✓ Environment loaded"
+
+echo ""
 echo "=== Setup Complete ==="
 echo ""
 echo "You can now run 'qwen code' to start using Qwen Code CLI."
