@@ -1,0 +1,34 @@
+{
+  "modelProviders": {
+    "openai": [
+      {
+        "id": "Qwen/Qwen3-Coder-Next-FP8",
+        "name": "Qwen3-Coder-Next-FP8",
+        "envKey": "OPENAI_API_KEY",
+        "baseUrl": "http://100.113.150.20:8000/v1",
+        "generationConfig": {
+          "contextWindowSize": 262144
+        }
+      }
+    ]
+  },
+  "model": {
+    "name": "Qwen/Qwen3-Coder-Next-FP8"
+  },
+  "security": {
+    "auth": {
+      "selectedType": "openai"
+    }
+  },
+  "$version": 3,
+  "mcpServers": {
+    "exa": {
+      "httpUrl": "https://mcp.exa.ai/mcp"
+    }
+  },
+  "tools": {
+    "sandbox": {
+      "image": "qwen-code"
+    }
+  }
+}
